@@ -1,0 +1,26 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "node programs",
+  "main": "index.js",
+  "dependencies": {
+    "chalk": "^2.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devak23/nodejs.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "abhay kulkarni",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devak23/nodejs/issues"
+  },
+  "homepage": "https://github.com/devak23/nodejs#readme"
+}
