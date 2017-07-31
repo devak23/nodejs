@@ -2,13 +2,16 @@
   "name": "nodejs",
   "version": "1.0.0",
   "description": "node programs",
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
     "chalk": "^2.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^4.1.0",
+    "mocha": "^3.4.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha src/**/*Test.js"
   },
   "repository": {
     "type": "git",
