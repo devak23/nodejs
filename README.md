@@ -12,4 +12,4 @@ the source code root. In this case the script tag is set as follows:
 - It's generally a convention to have the test file named appTest.js if
 the app file is named app.js (it also has to match the expression specified
 in the scripts tag)
-- The lessons for nodejs-basics have been taken from the <a> href="https://www.youtube.com/watch?v=tiMLxUKrB-g&list=PL55RiY5tL51oGJorjEgl6NVeDbx_fO5jR&index=6">you tube node-js videos</a>
+- The lessons for nodejs-basics have been taken from the <a href="https://www.youtube.com/watch?v=tiMLxUKrB-g&list=PL55RiY5tL51oGJorjEgl6NVeDbx_fO5jR&index=6">you tube node-js videos</a>
