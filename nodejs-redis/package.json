@@ -1,0 +1,29 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "node with redis",
+  "main": "app.js",
+  "dependencies": {
+    "redis": "^2.7.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.0",
+    "mocha": "^3.4.2"
+  },
+  "scripts": {
+    "test": "mocha src/**/*Test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devak23/nodejs.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "abhay kulkarni",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devak23/nodejs/issues"
+  },
+  "homepage": "https://github.com/devak23/nodejs#readme"
+}
