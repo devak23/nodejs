@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  table.table
+    thead
+    tbody
+    for employee in employees
+      tr
+        td #{employee.empno}
+        td #{employee.ename}
+        td #{employee.job}
+        td #{employee.mgr}
+        td #{employee.hiredate}
