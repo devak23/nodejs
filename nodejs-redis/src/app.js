@@ -120,4 +120,4 @@ redis_client.on("connect", () => {
   });
 });
 
-// With many thanks from: https://www.sitepoint.com/using-redis-node-js/
+// With many thanks to: https://www.sitepoint.com/using-redis-node-js/
