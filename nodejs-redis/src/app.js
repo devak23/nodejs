@@ -84,6 +84,40 @@ redis_client.on("connect", () => {
 
   // the deletion is necessary for this example as the list grows as many times this program is run
   // the list will always allow duplicates.
+  //
+  // ------------- storing sets -------------------------------
+  redis_client.sadd(['Tags', 'angluarjs', 'reactjs', 'backbonejs', 'emberjs', 'vuejs', 'mythriljs', 'vuejs', 'reactjs'], (err, reply) => {
+    console.log('stored', reply, 'items as set');
+  });
+
+  redis_client.smembers('Tags', (err, reply) => {
+    console.log('tags ==> ', reply);
+  });
+
+  // ---------------- integer manipluation ------------------------
+  redis_client.set('visitor_count', 1, () => {
+    redis_client.incr('visitor_count', (err, reply) => {
+      console.log('incrementing visitor_count by 1 = ', reply);
+    });
+
+    redis_client.incrby('visitor_count', 10, (err, reply) => {
+      console.log('incrementing visitor_count by 10 = ',reply)
+    });
+    
+    redis_client.decr('visitor_count', (err, reply) => {
+      console.log('decrementing visitor_count by 1 = ', reply);
+    });
+
+
+    redis_client.decrby('visitor_count', 5, (err, reply) => {
+      console.log('decrementing visitor_count by 5 = ',reply)
+    });
+  });
+
+  // ------------- checking for a value ----------------------
+  redis_client.exists('key1', (err, reply) => {
+    reply === 1? console.log("exists") : console.log("doesn't exist");
+  });
 });
 
-
+// With many thanks from: https://www.sitepoint.com/using-redis-node-js/
