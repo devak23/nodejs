@@ -1,3 +1,6 @@
+//
+// 02. Capturing Data from an EventEmitter
+//
 "use strict"
 
 const

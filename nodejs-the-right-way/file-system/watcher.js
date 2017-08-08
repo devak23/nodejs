@@ -1,3 +1,6 @@
+//
+// 02. Watching for file changes
+//
 "use strict";
 
 const fs = require('fs');
