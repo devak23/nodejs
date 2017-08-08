@@ -12,6 +12,13 @@ if (!filename) {
   throw Error('A file is required to watch');
 }
 
+try {
+  fs.accessSync(filename, fs.R_OK | fs.W_OK);
+} catch (e) {
+  console.log('File: ', filename, 'does not exist');
+  return;
+}
+
 // watch for changes in the filename
 fs.watch(filename, () => {
   // run the command 'ls -lh' by forking a child process using the spawn() function

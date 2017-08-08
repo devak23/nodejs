@@ -4,9 +4,18 @@
 "use strict";
 
 const fs = require('fs');
-fs.watch('./target.txt', () => {
-  console.log("File 'target.txt' just changed!");
-});
+try {
+  fs.accessSync('./target.txt',fs.R_OK | fs.W_OK);
+} catch (e) {
+  console.log('File does not exist', e);
+  return;
+}
 
-console.log("Watching 'target.txt' for changes...");
+  fs.watch('./target.txt', () => {
+    console.log("File 'target.txt' just changed!");
+  });
+
+  console.log("Watching 'target.txt' for changes...");
+
+
 

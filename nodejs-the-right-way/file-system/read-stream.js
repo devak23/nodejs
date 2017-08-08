@@ -1,7 +1,7 @@
 //
 // 02. Reading a stream
 //
-"use strict"
+"use strict";
 const 
   fs = require('fs'),
   stream = fs.createReadStream(process.argv[2]);
@@ -14,5 +14,5 @@ stream.on('data', (chunk) => {
 });
 
 stream.on('error', (err) => {
-  process.err.write('Error' + err.message + '\n');
+  process.stderr.write('Error' + err.message + '\n');
 });
