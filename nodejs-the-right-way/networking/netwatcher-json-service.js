@@ -27,14 +27,17 @@ const server = net.createServer((connection) => {
         action: 'watching',
         file: filename,
         timestamp: df(Date.now(), "mmmm dS, yyyy h:MM:ss TT")
-    }) + '\n');
+    }) + '\n');  // <---- This newline character acts as boundary between two messages.
+
+    // Also, it is important to note that the data event boundaries matches with the message event boundaries
+    // The client program netwatcher-json-client.js relies on this behavior.
 
     let watcher = fs.watch(filename, () => {
         connection.write(JSON.stringify({
             action: 'changed',
             file: filename,
             timestamp: df(Date.now(), "mmmm dS, yyyy h:MM:ss TT")
-        }) + '\n');
+        }) + '\n'); // <---- This newline character acts as boundary between two messages
     });
 
     connection.on('close', () => {
