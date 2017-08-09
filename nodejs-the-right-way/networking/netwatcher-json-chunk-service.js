@@ -5,11 +5,11 @@ const
         console.log('Subscriber connected');
 
         // send the first chunk immediately
-        connection.write("{'action' : 'changed', 'file' : 'targ");
+        connection.write('{"action" : "changed", "file" : "targ');
 
         // send the remaining part after a 2 second delay
         let timer = setTimeout(() => {
-            connection.write("et.txt', 'timestamp': '1358175758495}' + '\n'");
+            connection.write('et.txt", "timestamp": "1358175758495"}' + '\n');
         }, 2000);
 
         // clear the timer when the connection ends.
