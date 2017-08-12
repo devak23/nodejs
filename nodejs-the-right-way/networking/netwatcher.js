@@ -24,6 +24,9 @@ const server = net.createServer((connection) => {
     console.log("subscriber connected...");
     connection.write("Now watching " + filename + " for changes...\n");
 
+    // Note here that the file watcher is configured within the server.
+    // Meaning it will be invoked for each connecting client. This is different
+    // from the zero MQ server implementation (in zmq-watcher-pub.js
     let watcher = fs.watch(filename, () => {
         connection.write("File " + filename + " changed: " + Date.now() + "\n");
     });
