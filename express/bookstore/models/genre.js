@@ -27,3 +27,11 @@ module.exports.addGenre = (genre, callback) => {
 module.exports.getGenreById = (id, callback) => {
     Genre.findById(id, callback)
 };
+
+module.exports.updateGenre = (id, genre, options, callback) => {
+    let query = {_id: id};
+    let update = {
+        name: genre.name
+    };
+    Genre.findOneAndUpdate(query, update, options, callback)
+};
