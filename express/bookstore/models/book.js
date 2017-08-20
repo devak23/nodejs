@@ -72,3 +72,7 @@ module.exports.updateBook = (id, book, options, callback) => {
     };
     Book.findOneAndUpdate(query, update, options, callback);
 };
+
+module.exports.deleteBook = (id, callback) => {
+    Book.findByIdAndRemove(id, callback);
+};

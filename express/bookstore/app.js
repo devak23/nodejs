@@ -154,6 +154,21 @@ app.put("/bookstore/api/v1/genres/:_id", (req, res) => {
   });
 });
 
+app.delete('/bookstore/api/v1/genres/:_id', (req, res) => {
+  let id = req.params._id;
+  Genre.deleteGenre(id, (err) => {
+    if (err) {
+      res.status(err.status).json(err.message);
+    } else {
+      let message = {
+        id: id,
+        message: "Genre was deleted"
+      };
+
+      res.status(200).json(message);
+    }
+  })
+});
 
 app.listen(port, () => {
   console.log("Server running on port", port)
