@@ -2,6 +2,7 @@
 const
   app         = require('express')(),
   port        = 3000,
+  SERVER_ROOT = "http://localhost:" + port,
   bodyParser  = require('body-parser'),
   mongoose    = require('mongoose'),
   Book        = require('./models/book'),
@@ -64,6 +65,7 @@ app.post("/bookstore/api/v1/books", (req, res) => {
     if (err) {
       res.status(err.status).json(err.message)
     } else {
+      res.header("Location", SERVER_ROOT + "/bookstore/api/v1/books/" + book._id);
       res.status(201).json(book);
     }
   });
@@ -122,6 +124,7 @@ app.post("/bookstore/api/v1/genres", (req, res) => {
     if (err) {
       res.status(err.status).json(err.message)
     } else {
+      res.header("Location", SERVER_ROOT + "/bookstore/api/v1/genres/" + genre._id);
       res.status(201).json(genre);
     }
   });
